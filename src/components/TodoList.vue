@@ -1,6 +1,8 @@
 <template lang="html">
   <div>
-    <div class="centered card" v-for="todo in todos" v-bind:key="todo.id">
+    <!-- refactor the todo component -->
+    <todo v-for="todo in todos" v-bind:todo="todo"></todo>
+    <!-- <div class="centered card" v-for="(todo,idx) in todos" v-bind:key="idx">
       <div class="content">
         <div class="header">
           {{ todo.title }}
@@ -15,13 +17,18 @@
           Incomplete
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script type="text/javascript">
+import Todo from './Todo';
+
 export default {
   props: ['todos'],
+  components: {
+    Todo,
+  },
 };
 </script>
 

@@ -45,13 +45,13 @@ export default {
     };
   },
   methods: {
-    deleteTodo(){
+    deleteTodo() {
 
     },
-    showForm(){
+    showForm() {
       this.isEditing = true;
     },
-    hideForm(){
+    hideForm() {
       this.isEditing = false;
     },
   },

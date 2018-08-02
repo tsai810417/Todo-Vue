@@ -4,7 +4,8 @@
     <todo v-for="(todo, index) in todos"
     v-bind:todo="todo"
     v-bind:index="index"
-    v-bind:key="index"></todo>
+    v-bind:key="index"
+    v-on:reverse-status="reverseStatus"></todo>
     <!-- <div class="centered card" v-for="(todo,idx) in todos" v-bind:key="idx">
       <div class="content">
         <div class="header">
@@ -31,6 +32,11 @@ export default {
   props: ['todos'],
   components: {
     Todo,
+  },
+  methods: {
+    reverseStatus(idx) {
+      this.todos[idx].done = !(this.todos[idx].done);
+    },
   },
 };
 </script>

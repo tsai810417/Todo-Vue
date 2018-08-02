@@ -7,26 +7,32 @@
       <div class="meta">
         {{ todo.project }}
       </div>
-      <p class="status" v-if="todo.done">
+      <p class="status"
+      v-if="todo.done"
+      v-on:click="reverseStatus(index)">
         Completed
+      </p>
+      <p class="status"
+      v-if="!todo.done"
+      v-on:click="reverseStatus(index)">
+        Incomplete
       </p>
       <div class="buttons">
         <button v-on:click="deleteTodo">Delete</button>
         <button v-on:click="showForm">Edit</button>
       </div>
-      <p class="status" v-if="!todo.done">
-        Incomplete
-      </p>
     </div>
     <div class="content" v-show="isEditing">
       <div class="ui form">
         <div class="field">
-          <label>Title</label>
-          <input type="text" v-model="todo.title">
+          <label>Title
+            <input type="text" v-model="todo.title">
+          </label>
         </div>
         <div class="field">
-          <label>Project</label>
-          <input type="text" v-model="todo.project">
+          <label>Project
+            <input type="text" v-model="todo.project">
+          </label>
         </div>
         <div class="close button">
           <button type="button" v-on:click="hideForm">Done</button>
@@ -38,13 +44,16 @@
 
 <script>
 export default {
-  props: ['todo'],
+  props: ['todo', 'index'],
   data() {
     return {
       isEditing: false,
     };
   },
   methods: {
+    reverseStatus(index) {
+      this.$emit('reverse-status', index);
+    },
     deleteTodo() {
 
     },

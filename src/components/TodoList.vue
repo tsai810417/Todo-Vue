@@ -36,4 +36,14 @@ export default {
 </script>
 
 <style lang="css">
+  .content {
+    margin: 10px;
+    border: 1px solid #000000
+  }
+  .header, .meta, .status {
+    margin: 5px;
+  }
+  .buttons {
+    margin: 5px;
+  }
 </style>

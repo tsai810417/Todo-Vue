@@ -1,5 +1,5 @@
 <template>
-  <div class="centered card">
+  <div class="centered-card">
     <div class="content">
       <div class="header">
         {{ todo.title }}
@@ -7,16 +7,16 @@
       <div class="meta">
         {{ todo.project }}
       </div>
-      <div v-if="todo.done">
+      <p class="status" v-if="todo.done">
         Completed
-      </div>
+      </p>
       <div class="buttons">
-        <span v-on:click="deleteTodo">Delete</span>
-        <span v-on:click="showForm">Edit</span>
+        <button v-on:click="deleteTodo">Delete</button>
+        <button v-on:click="showForm">Edit</button>
       </div>
-      <div v-if="!todo.done">
+      <p class="status" v-if="!todo.done">
         Incomplete
-      </div>
+      </p>
     </div>
   </div>
   <!-- <div class="content" v-show="isEditing">

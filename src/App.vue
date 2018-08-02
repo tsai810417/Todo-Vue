@@ -44,5 +44,9 @@ export default {
 </script>
 
 <style>
-
+  #app {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 </style>

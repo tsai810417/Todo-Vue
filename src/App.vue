@@ -7,16 +7,19 @@
       Incompleted Tasks: {{ todos.filter(todo => {  return todo.done === false }).length }}
     </p>
     <todo-list v-bind:todos="todos"></todo-list>
+    <create-todo></create-todo>
   </div>
 </template>
 
 <script>
 import TodoList from './components/TodoList';
+import CreateTodo from './components/CreateTodo';
 
 export default {
   name: 'App',
   components: {
     TodoList,
+    CreateTodo,
   },
   data() {
     return {

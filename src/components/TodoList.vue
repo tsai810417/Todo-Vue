@@ -39,7 +39,7 @@ export default {
       this.todos[idx].done = !(this.todos[idx].done);
     },
     deleteTodo(idx) {
-      this.todos.splice(idx,1)
+      this.todos.splice(idx, 1);
     },
   },
 };

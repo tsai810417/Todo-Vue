@@ -7,15 +7,19 @@
       <div class="meta">
         {{ todo.project }}
       </div>
-      <div v-show="todo.done">
+      <div v-if="todo.done">
         Completed
       </div>
-      <div v-show="!todo.done">
+      <div class="buttons">
+        <span v-on:click="deleteTodo">Delete</span>
+        <span v-on:click="showForm">Edit</span>
+      </div>
+      <div v-if="!todo.done">
         Incomplete
       </div>
     </div>
   </div>
-  <!-- <div class="content" v-if="isEditing">
+  <!-- <div class="content" v-show="isEditing">
     <div class="ui form">
       <div class="field">
         <label>Title</label>
@@ -41,6 +45,9 @@ export default {
     };
   },
   methods: {
+    deleteTodo(){
+
+    },
     showForm(){
       this.isEditing = true;
     },

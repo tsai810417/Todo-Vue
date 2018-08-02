@@ -36,7 +36,13 @@ export default {
 </script>
 
 <style lang="css">
+  .centered-card {
+    width: 300px;
+    height: 100px;
+  }
   .content {
+    width: inherit;
+    height: inherit;
     margin: 10px;
     border: 1px solid #000000
   }

@@ -18,7 +18,7 @@
         Incomplete
       </p>
       <div class="buttons">
-        <button v-on:click="deleteTodo">Delete</button>
+        <button v-on:click="deleteTodo(index)">Delete</button>
         <button v-on:click="showForm">Edit</button>
       </div>
     </div>
@@ -54,8 +54,8 @@ export default {
     reverseStatus(index) {
       this.$emit('reverse-status', index);
     },
-    deleteTodo() {
-
+    deleteTodo(index) {
+      this.$emit('delete-todo', index);
     },
     showForm() {
       this.isEditing = true;

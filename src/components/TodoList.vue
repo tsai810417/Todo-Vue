@@ -5,7 +5,8 @@
     v-bind:todo="todo"
     v-bind:index="index"
     v-bind:key="index"
-    v-on:reverse-status="reverseStatus"></todo>
+    v-on:reverse-status="reverseStatus"
+    v-on:delete-todo="deleteTodo"></todo>
     <!-- <div class="centered card" v-for="(todo,idx) in todos" v-bind:key="idx">
       <div class="content">
         <div class="header">
@@ -36,6 +37,9 @@ export default {
   methods: {
     reverseStatus(idx) {
       this.todos[idx].done = !(this.todos[idx].done);
+    },
+    deleteTodo(idx) {
+      this.todos.splice(idx,1)
     },
   },
 };

@@ -7,7 +7,7 @@
       Incompleted Tasks: {{ todos.filter(todo => {  return todo.done === false }).length }}
     </p>
     <todo-list v-bind:todos="todos"></todo-list>
-    <create-todo></create-todo>
+    <create-todo v-on:create="create"></create-todo>
   </div>
 </template>
 
@@ -41,6 +41,15 @@ export default {
         done: false,
       }],
     };
+  },
+  methods: {
+    create(todoParams) {
+      let newTodo = new Object();
+      newTodo.title = todoParams.title;
+      newTodo.project = todoParams.project;
+      newTodo.done = todoParams.done;
+      this.todos.push(newTodo);
+    },
   },
 };
 
